@@ -27,6 +27,7 @@ export const ThemeProvider = ({children}: ThemeProviderProps) => {
       if (storedTheme && themes[storedTheme]) {
         setTheme(themes[storedTheme]);
       }
+      // set default scheme
       if (storedTheme == null) {
         const colorScheme = Appearance.getColorScheme();
         if (colorScheme === 'dark') {

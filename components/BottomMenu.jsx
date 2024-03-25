@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import React, {useContext} from 'react';
+import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import BottomHome from '../assets/images/bottom-home.png';
 import BottomClock from '../assets/images/bottom-clock.png';
 import BottomCenter from '../assets/images/bottom-center.png';
@@ -10,12 +10,11 @@ import BottomClockDark from '../assets/images/bottom-clock-dark.png';
 import BottomCenterDark from '../assets/images/bottom-center-dark.png';
 import BottomProfileDark from '../assets/images/bottom-profile-dark.png';
 import BottomWorldDark from '../assets/images/bottom-world-dark.png';
-import { ThemeContext } from '../context/ThemeContext';
+import {ThemeContext} from '../context/ThemeContext';
 import {useIsFocused} from '@react-navigation/native';
 
-
-const BottomMenu = ({ navigation }) => {
-  const { theme } = useContext(ThemeContext);
+const BottomMenu = ({navigation}) => {
+  const {theme} = useContext(ThemeContext);
   const currentScreenName =
     navigation.getState().routes[navigation.getState().index].name;
   console.log('My Screen Name ==> ', currentScreenName);
@@ -23,7 +22,7 @@ const BottomMenu = ({ navigation }) => {
 
   return (
     <View style={styles.menuUpperWrapper}>
-      <View style={[styles.menuContainer, { backgroundColor: theme.menuItemBG }]}>
+      <View style={[styles.menuContainer, {backgroundColor: theme.menuItemBG}]}>
         <TouchableOpacity
           style={[
             styles.bottomTabWrapper,
@@ -78,16 +77,17 @@ const BottomMenu = ({ navigation }) => {
             alt="icon"
           />
         </TouchableOpacity>
-        <TouchableOpacity style={[
-          styles.bottomTabWrapper,
-          {
+        <TouchableOpacity
+          style={[
+            styles.bottomTabWrapper,
+            {
               backgroundColor: `${
                 currentScreenName == 'Browser'
                   ? theme.bottomButtonSelectedBG
                   : 'rgba(0,0,0,0)'
               }`,
             },
-        ]}
+          ]}
           onPress={() => navigation.navigate('Browser')}>
           <Image
             style={styles.bottomTabImg}
